@@ -1,0 +1,153 @@
+/* Variáveis CSS para consistência */
+:root {
+  --primary-spacing: clamp(10px, 2vw, 30px);
+  --content-width: min(90%, 1200px);
+}
+
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Corpo da página */
+body {
+  background-color: black;
+  color: azure;
+  font-size: clamp(1rem, 2vw, 1.2rem);
+  margin-top: 56px;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: justify;
+}
+
+/* Container principal */
+.container-fluid {
+  width: var(--content-width);
+  margin: 0 auto;
+}
+
+/* Header */
+header {
+  width: 100%;
+  margin-bottom: var(--primary-spacing);
+}
+
+header .Banner {
+  width: var(--content-width);
+  margin: 0 auto;
+}
+
+header .Banner img {
+  width: 100%;
+  height: clamp(200px, 50vw, 1000px);
+  object-fit: contain;
+  margin-top: var(--primary-spacing);
+}
+
+/* Navbar */
+.navbar {
+  background-color: #343a40;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1000;
+  padding: clamp(8px, 1.5vw, 16px);
+}
+
+.navbar .navbar-brand {
+  font-size: clamp(1.1rem, 2.5vw, 1.5rem);
+}
+
+/* Main Content */
+main {
+  width: var(--content-width);
+  padding: var(--primary-spacing);
+  text-align: justify;
+  flex: 1;
+}
+
+main h1 {
+  font-size: clamp(1.8rem, 3vw, 2.5rem);
+  margin-bottom: clamp(15px, 2vw, 25px);
+}
+
+main h2 {
+  font-size: clamp(1.5rem, 2.5vw, 2rem);
+  margin-bottom: clamp(10px, 1.5vw, 20px);
+}
+
+main p {
+  font-size: clamp(1rem, 1.8vw, 1.2rem);
+  margin-bottom: clamp(10px, 2vw, 20px);
+  line-height: 1.6;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Botões */
+a.btn {
+  font-size: clamp(0.9rem, 1.5vw, 1.2rem);
+  padding: clamp(8px, 1.5vw, 15px) clamp(15px, 2vw, 30px);
+  transition: all 0.3s ease;
+}
+
+a.btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(255, 255, 255, 0.2);
+}
+
+/* Menu offcanvas */
+.offcanvas {
+  max-width: min(90%, 350px);
+}
+
+.offcanvas-body .nav-link {
+  font-size: clamp(0.9rem, 1.8vw, 1.1rem);
+  padding: clamp(8px, 1.5vw, 12px);
+}
+
+/* Dropdown menu */
+.dropdown-menu {
+  min-width: max-content;
+  padding: clamp(5px, 1vw, 10px);
+}
+
+.dropdown-item {
+  font-size: clamp(0.9rem, 1.8vw, 1.1rem);
+  padding: clamp(8px, 1.5vw, 12px);
+}
+
+/* Animações suaves */
+@media (prefers-reduced-motion: no-preference) {
+  * {
+    scroll-behavior: smooth;
+    transition: all 0.3s ease-in-out;
+  }
+}
+
+/* Otimização para dispositivos touch */
+@media (hover: none) {
+  a.btn:hover {
+    transform: none;
+    box-shadow: none;
+  }
+}
+
+/* Ajustes para telas muito pequenas */
+@media (max-width: 360px) {
+  :root {
+    --content-width: 95%;
+  }
+  
+  .navbar-brand {
+    font-size: 1rem;
+  }
+  
+  main {
+    padding: 10px;
+  }
+}
